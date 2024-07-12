@@ -1,0 +1,21 @@
+{
+    "name": "techstacks/legacy",
+    "description": "Techstacks Listing Fee for Legacy Medical Supplies Admin",
+    "require": {
+        "php": "~7.3|~7.4|~8.1|~8.2",
+        "ext-soap": "*",
+        "magento/module-catalog": "100.0.0",
+        "magento/module-email": "100.0.0",
+        "magento/module-ui": "100.0.0",
+        "magento/framework": "100.0.0"
+    },
+    "type": "magento2-module",
+    "version": "0.1.0",
+    "license": "MIT",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Techstacks\\ListingFee\\": ""
+        }
+    }
+}
