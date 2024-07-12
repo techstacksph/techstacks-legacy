@@ -2,9 +2,9 @@
 
 namespace Techstacks\Legacy\Block\Adminhtml\ListingFee;
 
-use Magento\Config\Block\System\Config\Form\Field;
+use Magento\Framework\View\Element\Template;
 
-class ListingFee extends Field
+class ListingFee extends Template
 {
     /**
      * @var string
@@ -12,10 +12,10 @@ class ListingFee extends Field
     protected $_template = 'Techstacks_Legacy::listing-fee.phtml';
 
     /**
-     * @return string
+     * @return array
      */
-    public function getSellersCollection(): string
+    public function getSellersCollection(): array
     {
-        return 'test';
+        return ['name' => 'Juan', 'age' => 32];
     }
 }

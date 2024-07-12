@@ -7,7 +7,7 @@
     </referenceBlock>
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="listing_fee_block" template="Techstacks_Legacy::listing-fee.phtml"/>
+            <block class="Techstacks\Legacy\Block\Adminhtml\ListingFee\ListingFee" name="listing_fee_block" template="Techstacks_Legacy::listing-fee.phtml"/>
         </referenceContainer>
     </body>
 </page>

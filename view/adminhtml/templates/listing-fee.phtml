@@ -10,12 +10,17 @@ use Techstacks\Legacy\Block\Adminhtml\ListingFee\ListingFee;
 
 ?>
 
-
 <p>Sellers List</p>
 
 <?php
+$sellers = $block->getSellersCollection();
 
-echo $block->getSellersCollection();
+if(is_array($sellers)) {
+    foreach ($sellers as $key => $seller) {
+        echo $key.": ".$seller."<br/>";
+    }
+}
+
 
 
 
