@@ -2,6 +2,7 @@
     "name": "techstacks/legacy",
     "description": "Techstacks Listing Fee for Legacy Medical Supplies Admin",
     "author": "Techstacks Ph",
+    "homepage": "https://tecshtacksph.com",
     "require": {
         "php": "~7.3|~7.4|~8.1|~8.2",
         "ext-soap": "*",

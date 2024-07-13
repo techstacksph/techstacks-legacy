@@ -13,15 +13,10 @@ use Techstacks\Legacy\Block\Adminhtml\ListingFee\ListingFee;
 <p>Sellers List</p>
 
 <?php
-$sellers = $block->getSellersCollection();
 
-if(is_array($sellers)) {
-    foreach ($sellers as $key => $seller) {
-        echo $key.": ".$seller."<br/>";
+$customers = $block->getSellersCollection()->getItems();
+foreach ($customers as $customer) {
+    if($customer->getData('is_vendor')) {
+        echo $customer->getData('name');
     }
 }
-
-
-
-
-

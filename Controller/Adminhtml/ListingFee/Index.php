@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright © 2024. Techstacks Ph All rights reserved.
+ * See LICENSE.txt for license details.
+ */
 namespace Techstacks\Legacy\Controller\Adminhtml\ListingFee;
 
 use Magento\Backend\App\Action;
