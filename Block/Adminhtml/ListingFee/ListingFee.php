@@ -8,6 +8,7 @@ namespace Techstacks\Legacy\Block\Adminhtml\ListingFee;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\View\Element\BlockInterface;
+use Magetop\Marketplace\Model\ResourceModel\Sellers\Collection;
 use Magetop\Marketplace\Model\ResourceModel\Sellers\CollectionFactory as SellerCollectionFactory;
 
 class ListingFee extends Template implements BlockInterface
@@ -37,9 +38,9 @@ class ListingFee extends Template implements BlockInterface
     }
 
     /**
-     * @return SellerCollectionFactory
+     * @return Collection
      */
-    public function getSellersCollection(): SellerCollectionFactory
+    public function getSellersCollection()
     {
         return $this->sellersCollectionFactory->create();
     }
