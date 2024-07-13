@@ -10,13 +10,53 @@ use Techstacks\Legacy\Block\Adminhtml\ListingFee\ListingFee;
 
 ?>
 
-<p>Sellers List</p>
-
-<?php
-
-$customers = $block->getSellersCollection()->getItems();
-foreach ($customers as $customer) {
-    if($customer->getData('is_vendor')) {
-        echo $customer->getData('name');
-    }
-}
+<div class="admin__data-grid-wrap" data-role="sticky-el-root">
+    <table class="data-grid" style="width: 100%; transform: translate(0px, 0px);">
+        <thead>
+            <tr>
+                <th class="data-grid-th">
+                    <span class="data-grid-cell-content" data-bind="i18n: label">Seller ID</span>
+                </th>
+                <th class="data-grid-th">
+                    <span class="data-grid-cell-content" data-bind="i18n: label">Name</span>
+                </th>
+                <th class="data-grid-th">
+                    <span class="data-grid-cell-content" data-bind="i18n: label">Email</span>
+                </th>
+                <th class="data-grid-th">
+                    <span class="data-grid-cell-content" data-bind="i18n: label">Store Title</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        $customers = $block->getSellersCollection()->getItems();
+        foreach ($customers as $customer) {
+            if ($customer->getData('is_vendor')) { ?>
+                <tr class="data-row">
+                    <td>
+                        <div class="data-grid-cell-content">
+                            <?php echo $customer->getData('user_id'); ?>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="data-grid-cell-content">
+                            <?php echo $customer->getData('name'); ?>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="data-grid-cell-content">
+                            <?php echo $customer->getData('email'); ?>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="data-grid-cell-content">
+                            <?php echo $customer->getData('storetitle'); ?>
+                        </div>
+                    </td>
+                </tr>
+            <?php }
+        } ?>
+        </tbody>
+    </table>
+</div>
