@@ -26,40 +26,47 @@ use Techstacks\Legacy\Block\Adminhtml\ListingFee\ListingFee;
                 <th class="data-grid-th">
                     <span class="data-grid-cell-content" data-bind="i18n: label">Store Title</span>
                 </th>
-                <!-- headers for number of active products -->
-                <!-- headers for number of total payable -->
-                <!-- headers for create invoice action -->
+                <th class="data-grid-th">
+                    <span class="data-grid-cell-content" data-bind="i18n: label">Product Name(s)</span>
+                </th>
+                <!-- Add more headers as needed -->
             </tr>
         </thead>
         <tbody>
         <?php
-        $customers = $block->getSellersCollection()->getItems();
-        foreach ($customers as $customer) {
-            if ($customer->getData('is_vendor')) { ?>
+        $sellers = $block->getSellersCollection()->getItems();
+        foreach ($sellers as $seller) {
+            if ($seller->getData('is_vendor')) {
+                $sellerId = $seller->getData('user_id');
+                $productNames = $block->getProductNamesBySeller($sellerId);
+                ?>
                 <tr class="data-row">
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('user_id'); ?>
+                            <?php echo $sellerId; ?>
                         </div>
                     </td>
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('name'); ?>
+                            <?php echo $seller->getData('name'); ?>
                         </div>
                     </td>
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('email'); ?>
+                            <?php echo $seller->getData('email'); ?>
                         </div>
                     </td>
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('storetitle'); ?>
+                            <?php echo $seller->getData('storetitle'); ?>
                         </div>
                     </td>
-                    <!-- table data for number of active products -->
-                    <!-- table data for number of total payable -->
-                    <!-- table data for create invoice action -->
+                    <td>
+                        <div class="data-grid-cell-content">
+                            <?php echo $productNames; ?>
+                        </div>
+                    </td>
+                    <!-- Add more table data cells for additional product attributes or actions -->
                 </tr>
             <?php }
         } ?>
