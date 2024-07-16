@@ -26,35 +26,43 @@ use Techstacks\Legacy\Block\Adminhtml\ListingFee\ListingFee;
                 <th class="data-grid-th">
                     <span class="data-grid-cell-content" data-bind="i18n: label">Store Title</span>
                 </th>
-                <!-- headers for number of active products -->
+                <th class="data-grid-th">
+                    <span class="data-grid-cell-content" data-bind="i18n: label">Total Active Products</span>
+                </th>
                 <!-- headers for number of total payable -->
                 <!-- headers for create invoice action -->
             </tr>
         </thead>
         <tbody>
         <?php
-        $customers = $block->getSellersCollection()->getItems();
-        foreach ($customers as $customer) {
-            if ($customer->getData('is_vendor')) { ?>
+        $sellers = $block->getSellersCollection()->getItems();
+        foreach ($sellers as $seller) {
+            if ($seller->getData('is_vendor')) { ?>
                 <tr class="data-row">
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('user_id'); ?>
+                            <?php echo $seller->getData('user_id'); ?>
                         </div>
                     </td>
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('name'); ?>
+                            <?php echo $seller->getData('name'); ?>
                         </div>
                     </td>
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('email'); ?>
+                            <?php echo $seller->getData('email'); ?>
                         </div>
                     </td>
                     <td>
                         <div class="data-grid-cell-content">
-                            <?php echo $customer->getData('storetitle'); ?>
+                            <?php echo $seller->getData('storetitle'); ?>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="data-grid-cell-content">
+                            <?php echo $block->getProductsCollection($seller->getData('user_id')); ?>
                         </div>
                     </td>
                     <!-- table data for number of active products -->
