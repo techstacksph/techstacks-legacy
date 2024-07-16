@@ -52,7 +52,9 @@ class ListingFee extends Template implements BlockInterface
      */
     public function getSellersCollection()
     {
-        return $this->sellersCollectionFactory->create();
+        return $this->sellersCollectionFactory->create()
+            ->addFieldToSelect('*')
+            ->addFieldToFilter('userstatus','1');
     }
 
     /**
