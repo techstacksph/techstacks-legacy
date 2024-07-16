@@ -3,7 +3,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Techstacks_Legacy::legacy" title="Listing Fee" sortOrder="1" />
+                <resource id="Techstacks_Legacy::listing_fee" title="Listing Fee" translate="true" sortOrder="1" />
             </resource>
         </resources>
     </acl>
