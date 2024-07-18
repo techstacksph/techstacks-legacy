@@ -3,6 +3,6 @@
     <menu>
         <add id="Techstacks_Legacy::legacy" title="Techstacks" module="Techstacks_Legacy" sortOrder="10" resource="Techstacks_Legacy::legacy"/>
         <add id="Techstacks_Legacy::listing_fee" translate="Listing Fee" title="Listing Fee" module="Techstacks_Legacy" sortOrder="0" parent="Techstacks_Legacy::legacy" resource="Techstacks_Legacy::listing_fee" dependsOnModule="Techstacks_Legacy" action="legacy/listingfee" />
+        <add id="Techstacks_Legacy::product_list" translate="Product List" title="Product List" module="Techstacks_Legacy" sortOrder="1" parent="Techstacks_Legacy::legacy" resource="Techstacks_Legacy::product_list" dependsOnModule="Techstacks_Legacy" action="legacy/productlist" />
     </menu>
 </config>
-

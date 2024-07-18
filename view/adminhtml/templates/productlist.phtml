@@ -1,0 +1,30 @@
+<?php
+/** @var \Techstacks\Legacy\Block\Adminhtml\ProductList $block */
+$collection = $block->getProductCollection();
+$escaper = $block->getEscaper();
+?>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th><?php echo __('ID'); ?></th>
+            <th><?php echo __('Name'); ?></th>
+            <th><?php echo __('SKU'); ?></th>
+            <th><?php echo __('Price'); ?></th>
+            <th><?php echo __('Status'); ?></th>
+            <th><?php echo __('Visibility'); ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($collection as $product): ?>
+            <tr>
+                <td><?php echo $escaper->escapeHtml($product->getId()); ?></td>
+                <td><?php echo $escaper->escapeHtml($product->getName()); ?></td>
+                <td><?php echo $escaper->escapeHtml($product->getSku()); ?></td>
+                <td><?php echo $escaper->escapeHtml($product->getPrice()); ?></td>
+                <td><?php echo $escaper->escapeHtml($product->getAttributeText('status')); ?></td>
+                <td><?php echo $escaper->escapeHtml($product->getAttributeText('visibility')); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
