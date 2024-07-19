@@ -7,13 +7,14 @@ namespace Techstacks\Legacy\Controller\Adminhtml\ListingFee;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Class Index
  */
-class Index extends Action
+class Index extends Action implements HttpGetActionInterface
 {
     const MENU_ID = 'Techstacks_Legacy::legacy';
 
