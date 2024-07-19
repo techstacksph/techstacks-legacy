@@ -3,7 +3,7 @@
  * Copyright © 2024. Techstacks Ph All rights reserved.
  * See LICENSE.txt for license details.
  */
-namespace Techstacks\Legacy\Block\Adminhtml\ListingFee;
+namespace Techstacks\Legacy\Block\Adminhtml\Listing;
 
 use DateTime;
 use Magento\Framework\View\Element\Template;
@@ -15,7 +15,7 @@ use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory as MageProduct
 use Magetop\Marketplace\Model\ResourceModel\Products\CollectionFactory as ProductsCollectionFactory;
 use Psr\Log\LoggerInterface;
 
-class ListingFee extends Template implements BlockInterface
+class Listing extends Template implements BlockInterface
 {
     /**
      * @var string

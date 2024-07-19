@@ -3,7 +3,7 @@
  * Copyright © 2024. Techstacks Ph All rights reserved.
  * See LICENSE.txt for license details.
  */
-namespace Techstacks\Legacy\Controller\Adminhtml\ListingFee;
+namespace Techstacks\Legacy\Controller\Adminhtml\Listing;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -40,7 +40,7 @@ class Index extends Action implements HttpGetActionInterface
     }
 
     /**
-     * Load the page defined in view/adminhtml/layout/techstacks_legacy_index.xml
+     * Load the page defined in view/adminhtml/layout/legacy_listing_index.xml
      *
      * @return Page
      */
@@ -51,15 +51,5 @@ class Index extends Action implements HttpGetActionInterface
         $resultPage->getConfig()->getTitle()->prepend(__('Techstacks'));
 
         return $resultPage;
-    }
-
-    /**
-     * Check Permission.
-     *
-     * @return bool
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Techstacks_Legacy::legacy');
     }
 }
