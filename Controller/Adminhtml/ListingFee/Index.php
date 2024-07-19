@@ -7,14 +7,13 @@ namespace Techstacks\Legacy\Controller\Adminhtml\ListingFee;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Class Index
  */
-class Index extends Action implements HttpGetActionInterface
+class Index extends Action
 {
     const MENU_ID = 'Techstacks_Legacy::legacy';
 
@@ -30,9 +29,10 @@ class Index extends Action implements HttpGetActionInterface
      * @param PageFactory $resultPageFactory
      */
     public function __construct(
-        Context $context,
+        Context     $context,
         PageFactory $resultPageFactory,
-    ) {
+    )
+    {
         parent::__construct($context);
 
         $this->resultPageFactory = $resultPageFactory;
@@ -50,5 +50,15 @@ class Index extends Action implements HttpGetActionInterface
         $resultPage->getConfig()->getTitle()->prepend(__('Techstacks'));
 
         return $resultPage;
+    }
+
+    /**
+     * Check Permission.
+     *
+     * @return bool
+     */
+    protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('Techstacks_Legacy::legacy');
     }
 }
