@@ -101,15 +101,6 @@ class ListingFee extends Template implements BlockInterface
         return $price->getFirstItem()->getData('price');
     }
 
-    protected function isTwoMonthsAhead(DateTime $date): bool {
-        $currentDate = new DateTime();
-
-        $twoMonthsAhead = clone $currentDate;
-        $twoMonthsAhead->modify('+2 months');
-
-        return $date->format('Y-m') === $twoMonthsAhead->format('Y-m');
-    }
-
     /**
      * @param $sellerId
      * @return float|int
@@ -124,8 +115,8 @@ class ListingFee extends Template implements BlockInterface
             $priceArray = [];
             foreach ($productCollection as $product) {
                 if($product->getData('created')) {
-                    $created = new \DateTime($product->getData('created'));
-                    if($this->isTwoMonthsAhead($created)) {
+                    $created = new DateTime($product->getData('created'));
+                    if(strtotime($created->format('Y-m-d H:i:s')) < strtotime('-3 months')) {
                         $priceArray[] = (float)$this->getPriceById($product->getData('product_id')) * 0.03;
                     } else {
                         $priceArray[] = (float)$this->getPriceById($product->getData('product_id')) * 0.05;
