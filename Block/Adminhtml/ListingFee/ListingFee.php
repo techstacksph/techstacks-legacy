@@ -20,7 +20,7 @@ class ListingFee extends Template implements BlockInterface
     /**
      * @var string
      */
-    protected $_template = 'Techstacks_Legacy::listing-fee.phtml';
+    protected $_template = 'Techstacks_Legacy::listingfee.phtml';
 
     /**
      * @var SellerCollectionFactory
