@@ -7,7 +7,7 @@
 
 Run the following command:
 ```bash
-composer require techstacks/legacy-listing-fee
+composer require techstacks/legacy
 ```
 
 ```bash
