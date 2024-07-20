@@ -1,7 +1,7 @@
 # Techstacks 
 ## Custom Magento 2 Module for Legacy Medical Supplies Listing Fee
 
-### version v0.1.6
+### version v0.1.7
 
 ## INSTALLATION
 

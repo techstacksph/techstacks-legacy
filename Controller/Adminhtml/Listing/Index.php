@@ -30,12 +30,10 @@ class Index extends Action implements HttpGetActionInterface
      * @param PageFactory $resultPageFactory
      */
     public function __construct(
-        Context     $context,
-        PageFactory $resultPageFactory,
-    )
-    {
+        Context $context,
+        PageFactory $resultPageFactory
+    ) {
         parent::__construct($context);
-
         $this->resultPageFactory = $resultPageFactory;
     }
 

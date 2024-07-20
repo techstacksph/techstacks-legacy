@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Techstacks_Legacy::legacy" translate="Techstacks" title="Techstacks" module="Techstacks_Legacy" sortOrder="10" resource="Techstacks_Legacy::legacy" />
-        <add id="Techstacks_Legacy::listing" translate="Listing Fee" title="Listing Fee" module="Techstacks_Legacy" sortOrder="0" parent="Techstacks_Legacy::legacy" resource="Techstacks_Legacy::listing" dependsOnModule="Techstacks_Legacy" action="legacy/listing/index" />
+        <add id="Techstacks_Legacy::legacy" translate="title" title="Techstacks" module="Techstacks_Legacy" sortOrder="10" resource="Techstacks_Legacy::legacy" />
+        <add id="Techstacks_Legacy::listing" translate="title" title="Listing Fee" module="Techstacks_Legacy" sortOrder="0" parent="Techstacks_Legacy::legacy" resource="Techstacks_Legacy::listing" action="legacy/listing/index" />
     </menu>
 </config>
-
