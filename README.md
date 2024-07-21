@@ -1,13 +1,13 @@
 # Techstacks 
 ## Custom Magento 2 Module for Legacy Medical Supplies Listing Fee
 
-### version v0.1.9
+### version v0.2.0
 
 ## INSTALLATION
 
 Run the following command:
 ```bash
-composer require techstacks/legacy
+composer require techstacks/legacy-listing-fee
 ```
 
 ```bash

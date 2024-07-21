@@ -11,12 +11,12 @@
         "ext-soap": "*"
     },
     "type": "magento2-module",
-    "version": "0.1.9",
+    "version": "0.2.0",
     "license": "MIT",
     "autoload": {
         "files": [ "registration.php" ],
         "psr-4": {
-            "Techstacks\\Listing\\": ""
+            "Techstacks\\Legacy\\": ""
         }
     }
 }
