@@ -1,5 +1,5 @@
 {
-    "name": "techstacks/legacy",
+    "name": "techstacks/legacy-listing-fee",
     "description": "Techstacks Listing Fee for Legacy Medical Supplies Admin",
     "author": {
         "name": "Techstacks Ph",
@@ -11,12 +11,12 @@
         "ext-soap": "*"
     },
     "type": "magento2-module",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "license": "MIT",
     "autoload": {
         "files": [ "registration.php" ],
         "psr-4": {
-            "Techstacks\\ListingFee\\": ""
+            "Techstacks\\Listing\\": ""
         }
     }
 }
